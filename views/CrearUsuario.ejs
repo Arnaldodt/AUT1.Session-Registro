@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/CrearUsuario" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre" value="<%=Datos.nombre%>" required>
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="apellido" id="apellido" placeholder="Ingrese apellido" value="<%=Datos.apellido%>" required>
+    <label for="cumpleaños">Cumpleaños:</label>
+    <input type="date" name="cumpleaños" id="cumpleaños" placeholder="Ingrese cumpleaños" value="<%=Datos.cumpleaños%>" required>
+    <label for="correo">Correo Electornico:</label>
+    <input type="email" name="correo" id="correo" placeholder="Ingrese correo" value="<%=Datos.correo%>" required>
+    <label for="pwd">Password:</label>
+    <input type="password" name="pwd" id="pwd" placeholder="Ingrese password" required>
+    <button type="submit">Ingresar</button>
+    <%for (var x in validaciones){
+        if (x == 0){%>
+            <br><br>Errores:<br>
+        <%}%>
+        <%=validaciones[x].param%> :: <%=validaciones[x].msg%> <br>
+    <%}%>
+    </form>
+    <br><br>
+    <a href="/">Volver</a>
+</body>
+</html>
